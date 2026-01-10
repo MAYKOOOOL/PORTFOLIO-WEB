@@ -280,5 +280,5 @@ body { background: #0d1117; /* Replaced var(--bg-dark) for compatibility */
 
 /* Hover effect for the email link */
 a.contact-text:hover {
-    color: #58a6ff; /* GitHub blue hover */
+    color: #58a6ff; 
 }
