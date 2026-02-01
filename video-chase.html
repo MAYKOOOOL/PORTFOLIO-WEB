@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase | MAYKOL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="index.html" class="nav-item">Home</a>
+                <button class="nav-item" onclick="toggleModal()">Creator's Information</button>
+            </div>
+
+            <div class="nav-controls">
+                <input type="text" id="projectSearch" placeholder="Search projects..." onfocus="window.location.href='index.html'">
+                
+                <div class="settings-dropdown">
+                    <button class="settings-btn">🌐 Language</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="changeLanguage('en')">English</a>
+                        <a href="#" onclick="changeLanguage('tl')">Tagalog</a>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <img src="LOGO.png" alt="Logo" class="header-logo">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="video-container-main">
+        <header class="video-header-block">
+            <h1 id="videoTitle">CHASE!</h1>
+            <p id="videoSubtitle">3D Stealth Adventure </p>
+            <br>
+        </header>
+
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/A7MgiEX1498" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <section class="video-description">
+            <h3>Project Insights</h3>
+            <br>
+            <p>Focused on AI detection logic and suspenseful atmosphere. Players must navigate through 3D environments using stealth mechanics I developed using Unity's NavMesh system.</p>
+            <br>
+            <a href="index.html" style="color:var(--github-blue); text-decoration:none; font-weight:bold;">← Back to All Games</a>
+        </section>
+    </main>
+
+    <div id="cvModal" class="modal-overlay">
+        <div class="cv-container">
+            <button class="modal-close" onclick="toggleModal()">&times;</button>
+            <div class="cv-scroll-area">
+                <img src="1.png" alt="Resume Page 1" class="resume-img">
+                <img src="2.png" alt="Resume Page 2" class="resume-img">
+            </div>
+        </div>
+    </div>
+
+    <footer class="social-footer">
+        <p class="footer-contact">© 2025 MAYKOL | kurasmagprod.nineteen@gmail.com</p>
+    </footer>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('cvModal');
+            const isVisible = modal.style.display === 'flex';
+            modal.style.display = isVisible ? 'none' : 'flex';
+            document.body.style.overflow = isVisible ? 'auto' : 'hidden';
+        }
+
+        const translations = {
+            'en': { 'videoSubtitle': 'Game Development & Design' },
+            'tl': { 'videoSubtitle': 'Pagbuo ng Laro at Disenyo' }
+        };
+
+        function changeLanguage(lang) {
+            const el = document.getElementById('videoSubtitle');
+            if (el) el.innerText = translations[lang]['videoSubtitle'];
+        }
+    </script>
+</body>
+</html>
